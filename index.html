@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b2545">
+  <meta name="description" content="রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টার, জয়পুরহাট—শিক্ষকের তত্ত্বাবধানে নিজ প্রতিষ্ঠানের সিলেবাস অনুযায়ী পড়াশোনার সুশৃঙ্খল পরিবেশ।">
+  <title>রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টার | জয়পুরহাট</title>
+
+  <!-- বাংলা ফন্ট ইন্টারনেট থাকলে Google Fonts থেকে লোড হবে; না হলে fallback font ব্যবহৃত হবে। -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0b2545;
+      --navy-2: #123a63;
+      --blue: #1769aa;
+      --sky: #eaf5ff;
+      --green: #0c8a68;
+      --gold: #f2b84b;
+      --ink: #172638;
+      --muted: #607084;
+      --line: #dce6ef;
+      --paper: #ffffff;
+      --soft: #f5f8fc;
+      --shadow: 0 14px 40px rgba(11,37,69,.10);
+      --radius: 20px;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; color: var(--ink); background: #fff; font-family: "Hind Siliguri", "Noto Sans Bengali", sans-serif; line-height: 1.75; }
+    img, video, iframe { max-width: 100%; }
+    img { display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin-inline: auto; }
+    .topline { background: var(--navy); color: #fff; font-size: .92rem; }
+    .topline-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 0; flex-wrap: wrap; }
+    .topline a { color: #fff; }
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(220,230,239,.9); }
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 78px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark { width: 48px; height: 48px; border-radius: 15px; background: linear-gradient(135deg,var(--navy),var(--green)); display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 1.1rem; flex: 0 0 auto; box-shadow: 0 8px 18px rgba(11,37,69,.18); }
+    .brand-title { font-weight: 700; color: var(--navy); line-height: 1.25; font-size: 1.05rem; }
+    .brand-sub { display: block; font-size: .78rem; color: var(--muted); font-weight: 500; margin-top: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    .nav-links a { font-weight: 600; font-size: .93rem; color: #33465a; }
+    .nav-links a:hover { color: var(--green); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: white; border-radius: 10px; padding: 8px 12px; color: var(--navy); cursor: pointer; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 19px; border-radius: 12px; font-weight: 700; border: 1px solid transparent; transition: .2s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--green); color: #fff; box-shadow: 0 8px 18px rgba(12,138,104,.2); }
+    .btn-primary:hover { background: #087454; }
+    .btn-outline { border-color: rgba(255,255,255,.6); color: #fff; background: rgba(255,255,255,.08); }
+    .btn-light { color: var(--navy); background: #fff; border-color: var(--line); }
+    .hero { position: relative; overflow: hidden; color: #fff; background: radial-gradient(circle at 85% 10%,rgba(46,154,176,.42),transparent 30%), linear-gradient(120deg,#091e38 0%,#123a63 60%,#0c725f 120%); padding: 82px 0 72px; }
+    .hero::before { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; right: -130px; bottom: -220px; box-shadow: 0 0 0 45px rgba(255,255,255,.025),0 0 0 90px rgba(255,255,255,.02); }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 42px; align-items: center; position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; gap: 8px; align-items: center; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.08); padding: 7px 13px; border-radius: 99px; color: #e5f7ff; font-size: .9rem; font-weight: 600; }
+    .hero h1 { font-size: clamp(2rem,4.5vw,3.55rem); line-height: 1.22; margin: 18px 0; letter-spacing: -.4px; }
+    .hero h1 span { color: #8ce0c7; }
+    .hero p { color: #e2ebf5; font-size: 1.1rem; max-width: 690px; margin: 0 0 24px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { margin-top: 20px; color: #c5d8e8; font-size: .92rem; }
+    .hero-panel { background: rgba(255,255,255,.97); color: var(--ink); border-radius: 24px; padding: 25px; box-shadow: 0 25px 70px rgba(0,0,0,.18); }
+    .panel-label { color: var(--green); font-weight: 700; font-size: .88rem; }
+    .hero-panel h2 { margin: 4px 0 16px; color: var(--navy); font-size: 1.55rem; }
+    .quick-row { display: flex; gap: 13px; align-items: flex-start; padding: 13px 0; border-top: 1px solid var(--line); }
+    .quick-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: var(--sky); color: var(--blue); flex: 0 0 auto; font-size: 1.15rem; }
+    .quick-row strong { display: block; color: var(--navy); }
+    .quick-row small { color: var(--muted); display: block; }
+    .stats { position: relative; z-index: 2; margin-top: -28px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); background: #fff; border-radius: 18px; box-shadow: var(--shadow); border: 1px solid var(--line); overflow: hidden; }
+    .stat { text-align: center; padding: 22px 12px; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: 0; }
+    .stat b { display: block; color: var(--navy); font-size: 1.7rem; line-height: 1.25; }
+    .stat span { color: var(--muted); font-size: .9rem; }
+    section { padding: 76px 0; }
+    section.soft { background: var(--soft); }
+    .section-head { max-width: 760px; margin: 0 auto 35px; text-align: center; }
+    .kicker { color: var(--green); font-weight: 700; font-size: .92rem; }
+    .section-head h2 { color: var(--navy); font-size: clamp(1.8rem,3vw,2.5rem); line-height: 1.25; margin: 8px 0 12px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 7px 24px rgba(11,37,69,.045); }
+    .card h3 { color: var(--navy); margin: 10px 0 8px; font-size: 1.25rem; line-height: 1.35; }
+    .card p { color: var(--muted); margin: 0; }
+    .icon-box { width: 48px; height: 48px; border-radius: 15px; display: grid; place-items: center; background: var(--sky); color: var(--blue); font-size: 1.35rem; }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
+    .photo-placeholder { min-height: 340px; border-radius: 24px; background: linear-gradient(135deg,#e4f4f0,#eaf2ff); border: 2px dashed #a9c9d7; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; color: var(--navy); }
+    .photo-placeholder strong { font-size: 1.2rem; }
+    .photo-placeholder span { color: var(--muted); font-size: .9rem; }
+    .check-list { list-style: none; padding: 0; margin: 20px 0 0; }
+    .check-list li { padding: 7px 0 7px 30px; position: relative; }
+    .check-list li::before { content: "✓"; position: absolute; left: 0; top: 8px; width: 21px; height: 21px; display: grid; place-items: center; border-radius: 50%; background: #dff7ee; color: var(--green); font-size: .8rem; font-weight: 700; }
+    .notice { background: #fff8e8; border: 1px solid #f3d99c; border-left: 5px solid var(--gold); padding: 17px 20px; border-radius: 12px; color: #694e13; }
+    .shift-card { position: relative; overflow: hidden; }
+    .shift-card.active { border-color: #9adcc8; background: linear-gradient(180deg,#fff,#f3fcf8); }
+    .status { display: inline-block; border-radius: 99px; padding: 4px 10px; font-size: .82rem; font-weight: 700; margin-bottom: 10px; }
+    .status-active { background: #dff7ee; color: #087454; }
+    .status-soon { background: #fff0cf; color: #875b00; }
+    .fee { color: var(--navy); font-weight: 700; margin: 15px 0; font-size: 1rem; }
+    .fee strong { color: var(--green); font-size: 1.3rem; }
+    .mini-list { margin: 12px 0 0; padding-left: 20px; color: var(--muted); }
+    .teacher-card { text-align: center; }
+    .avatar-placeholder { width: 112px; height: 112px; border-radius: 50%; margin: 0 auto 16px; border: 3px solid #d6eee7; background: linear-gradient(135deg,#e5f4ff,#e4f7ef); display: grid; place-items: center; color: var(--navy); font-size: 2rem; font-weight: 700; overflow: hidden; }
+    .teacher-card .role { color: var(--green); font-weight: 700; font-size: .92rem; }
+    .teacher-card p { font-size: .94rem; }
+    .steps { counter-reset: step; }
+    .step { display: flex; gap: 15px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .step:last-child { border-bottom: 0; }
+    .step::before { counter-increment: step; content: counter(step,decimal-leading-zero); color: var(--green); font-weight: 700; font-size: 1.15rem; }
+    .step strong { display: block; color: var(--navy); }
+    .media-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .media-item { border: 1px solid var(--line); border-radius: 17px; overflow: hidden; background: #fff; }
+    .media-frame { aspect-ratio: 16 / 10; background: linear-gradient(135deg,#eaf5ff,#e4f7ef); display: grid; place-items: center; color: var(--navy); text-align: center; padding: 18px; }
+    .media-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .media-caption { padding: 14px 16px; }
+    .media-caption strong { color: var(--navy); display: block; }
+    .media-caption span { color: var(--muted); font-size: .88rem; }
+    .result-card { border-top: 4px solid var(--gold); }
+    .result-meta { color: var(--muted); font-size: .9rem; }
+    .result-rank { display: inline-block; background: #fff2d5; color: #805500; font-weight: 700; border-radius: 8px; padding: 3px 9px; margin-bottom: 8px; }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 25px; }
+    .contact-line { display: flex; gap: 13px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .contact-line:last-child { border-bottom: 0; }
+    .contact-line b { display: block; color: var(--navy); }
+    .contact-line span { color: var(--muted); }
+    .map-placeholder { min-height: 280px; border-radius: 18px; background: #edf5f8; border: 1px dashed #a9c9d7; display: grid; place-items: center; padding: 20px; text-align: center; color: var(--muted); }
+    .cta-band { background: linear-gradient(110deg,var(--navy),var(--green)); color: #fff; border-radius: 24px; padding: 32px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .cta-band h2 { margin: 0 0 5px; font-size: clamp(1.4rem,3vw,2rem); }
+    .cta-band p { margin: 0; color: #dcefe9; }
+    footer { background: #071a30; color: #d6e1ed; padding: 32px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 30px; }
+    footer h3, footer h4 { color: #fff; margin-top: 0; }
+    footer a { color: #d6e1ed; }
+    .footer-links { display: grid; gap: 6px; }
+    .copyright { border-top: 1px solid rgba(255,255,255,.14); margin-top: 24px; padding-top: 17px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: .9rem; color: #aebfd0; }
+    .floating-contact { position: fixed; right: 18px; bottom: 18px; z-index: 40; background: #0c8a68; color: #fff; border-radius: 50px; padding: 12px 17px; font-weight: 700; box-shadow: 0 12px 28px rgba(0,0,0,.2); }
+    .small-note { color: var(--muted); font-size: .88rem; }
+    @media (max-width: 980px) {
+      .nav-links { gap: 10px; }
+      .nav-links a { font-size: .86rem; }
+      .hero-grid { gap: 25px; }
+      .grid-4 { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 760px) {
+      .nav-wrap { min-height: 70px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; padding: 14px 20px 20px; background: #fff; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); flex-direction: column; align-items: stretch; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 7px 0; font-size: 1rem; }
+      .nav-links .btn { margin-top: 5px; }
+      .hero { padding: 55px 0 55px; }
+      .hero-grid, .about-layout, .contact-grid { grid-template-columns: 1fr; }
+      .hero-panel { max-width: 560px; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      section { padding: 56px 0; }
+      .grid-3, .media-grid { grid-template-columns: repeat(2,1fr); }
+      .grid-2 { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .cta-band { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .container { width: min(var(--max), calc(100% - 24px)); }
+      .brand-title { font-size: .91rem; }
+      .brand-sub { font-size: .72rem; }
+      .brand-mark { width: 42px; height: 42px; border-radius: 12px; }
+      .topline-inner { font-size: .82rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .grid-3, .grid-4, .media-grid { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .floating-contact { right: 12px; bottom: 12px; font-size: .9rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ==========================================================
+       CONTENT EDIT GUIDE
+       1) নিজের ছবি যোগ করতে: <img src="images/photo.jpg" alt="..."> ব্যবহার করুন।
+       2) ছবি GitHub repository-তে images নামে ফোল্ডারে আপলোড করুন।
+       3) YouTube ভিডিও যোগ করতে VIDEO_ID-এর জায়গায় ভিডিওর ID বসান।
+       4) লেখা বদলাতে সংশ্লিষ্ট HTML অংশের লেখা সরাসরি সম্পাদনা করুন।
+       5) ছবি/ভিডিওর ফাইলনাম ও বড়-ছোট হাতের অক্ষর হুবহু মিলতে হবে।
+       ========================================================== -->
+
+  <div class="topline">
+    <div class="container topline-inner">
+      <span>মেজবা স্যার পরিচালিত · জয়পুরহাট</span>
+      <span>ফোন: <a href="tel:+8801773260187">০১৭৭৩-২৬০১৮৭</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="হোম">
+        <span class="brand-mark">RR</span>
+        <span>
+          <span class="brand-title">রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টার</span>
+          <span class="brand-sub">Reading Room & Day-Night Care Center · Joypurhat</span>
+        </span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰ মেনু</button>
+      <nav class="nav-links" id="navLinks" aria-label="প্রধান মেনু">
+        <a href="#about">পরিচিতি</a>
+        <a href="#facilities">সুবিধা</a>
+        <a href="#shifts">শিক্ষার্থী শিফট</a>
+        <a href="#job-prep">চাকরি প্রস্তুতি</a>
+        <a href="#teachers">শিক্ষকবৃন্দ</a>
+        <a href="#results">পরীক্ষা ও ফলাফল</a>
+        <a href="#gallery">গ্যালারি</a>
+        <a class="btn btn-primary" href="#contact">যোগাযোগ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO: চাইলে প্রতিষ্ঠানের ব্যানার/কভার ছবি এখানে যোগ করুন। -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">শিক্ষকের তত্ত্বাবধানে সুশৃঙ্খল পড়ার পরিবেশ</span>
+          <h1>জয়পুরহাটে <span>এই প্রথম...</span><br>পড়াশোনার জন্য আলাদা, পরিকল্পিত পরিবেশ</h1>
+          <p>এটি কোনো কোচিং বা প্রাইভেট নয়; শিক্ষকের তত্ত্বাবধানে আলাদা ডেস্কভিত্তিক শিফটে নিজ প্রতিষ্ঠানের সিলেবাস অনুযায়ী পড়ার একটি আধুনিক ও সুশৃঙ্খল ব্যবস্থা।</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#shifts">শিফট ও ফি দেখুন</a>
+            <a class="btn btn-outline" href="tel:+8801773260187">ফোন করুন</a>
+          </div>
+          <div class="hero-note">তৃতীয় শ্রেণি থেকে এইচএসসি পর্যন্ত শিক্ষার্থীদের জন্য · আসন সংখ্যা সীমিত: ২৫টি</div>
+        </div>
+        <aside class="hero-panel" aria-label="প্রতিষ্ঠানের সংক্ষিপ্ত তথ্য">
+          <span class="panel-label">আমাদের মূল বৈশিষ্ট্য</span>
+          <h2>পড়াশোনায় নিয়মিততা, মনোযোগ ও সহায়তা</h2>
+          <div class="quick-row"><span class="quick-icon">✓</span><div><strong>শিক্ষকের তত্ত্বাবধান</strong><small>পড়াশোনার সময় প্রয়োজনীয় দিকনির্দেশনা</small></div></div>
+          <div class="quick-row"><span class="quick-icon">▦</span><div><strong>আলাদা ডেস্কভিত্তিক শিফট</strong><small>নিজের পড়া নিজে গুছিয়ে নেওয়ার পরিবেশ</small></div></div>
+          <div class="quick-row"><span class="quick-icon">✦</span><div><strong>মাসে ২টি পরীক্ষা</strong><small>অগ্রগতি যাচাই ও মেধাবীদের স্বীকৃতি</small></div></div>
+          <div class="quick-row"><span class="quick-icon">⌂</span><div><strong>জয়পুরহাট সদর</strong><small>থ্রি স্টার মোড়, হাজী মাদ্রাসা রোড</small></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container stats" aria-label="প্রতিষ্ঠানের সংক্ষিপ্ত পরিসংখ্যান">
+      <div class="stats-grid">
+        <div class="stat"><b>২৫</b><span>মোট আসন</span></div>
+        <div class="stat"><b>৩য়–HSC</b><span>শিক্ষার্থীর শ্রেণি</span></div>
+        <div class="stat"><b>২টি</b><span>মাসিক পরীক্ষা</span></div>
+        <div class="stat"><b>৩ শিফট</b><span>শিক্ষার্থী পড়ার সময়সূচি</span></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container about-layout">
+        <div>
+          <span class="kicker">আমাদের পরিচিতি</span>
+          <h2 style="color:var(--navy);font-size:clamp(1.8rem,3vw,2.45rem);line-height:1.3;margin:8px 0 16px;">শুধু পড়ার জায়গা নয়—নিয়মিত পড়ার অভ্যাস গড়ার পরিবেশ</h2>
+          <p>অনেক শিক্ষার্থী স্কুল, কলেজ, কোচিং বা প্রাইভেটের পড়া বাসায় এসে নিয়মিত শেষ করতে পারে না। তাদের জন্য পরিকল্পিত পরিবেশে নিজের সিলেবাস অনুযায়ী পড়াশোনা করার সুযোগ তৈরি করাই আমাদের লক্ষ্য।</p>
+          <p>এখানে শিক্ষার্থীরা নিজ নিজ শিক্ষা প্রতিষ্ঠানের পড়া নিয়ে আসে। নির্ধারিত শিফটে ডেস্কে বসে পড়াশোনা করে এবং প্রয়োজন অনুযায়ী শিক্ষকের সহায়তা ও দিকনির্দেশনা পায়।</p>
+          <div class="notice"><strong>গুরুত্বপূর্ণ:</strong> এটি প্রচলিত কোচিং বা প্রাইভেটের বিকল্প নয়। শিক্ষার্থীর নিজস্ব স্কুল, কলেজ, কোচিং বা প্রাইভেটের সিলেবাস অনুযায়ী পড়ার সহায়ক পরিবেশ।</div>
+        </div>
+        <!-- ছবি যোগের নমুনা: <img src="images/reading-room.jpg" alt="রিডিং রুমের ভেতরের পরিবেশ" style="width:100%;height:100%;object-fit:cover;border-radius:24px"> -->
+        <div class="photo-placeholder">
+          <strong>এখানে প্রতিষ্ঠানের প্রধান ছবি যোগ করুন</strong>
+          <span>প্রস্তাবিত ফাইল: images/reading-room.jpg</span>
+          <span>উপরের মন্তব্যে দেওয়া img কোড ব্যবহার করে এই বক্সের পরিবর্তে ছবি বসান।</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="facilities">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">কেন আমাদের রিডিং রুম?</span>
+          <h2>পড়াশোনার পরিবেশে যা যা থাকছে</h2>
+          <p>শিক্ষার্থীর নিজের পড়া, নিয়মিততা ও অগ্রগতিকে গুরুত্ব দিয়ে সাজানো ব্যবস্থা।</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><div class="icon-box">▣</div><h3>শিক্ষকের তত্ত্বাবধান</h3><p>পড়াশোনার সময় প্রয়োজনীয় সহায়তা ও দিকনির্দেশনা।</p></article>
+          <article class="card"><div class="icon-box">▤</div><h3>আলাদা ডেস্ক</h3><p>মনোযোগ ধরে রেখে নিজের পড়া শেষ করার জন্য নির্ধারিত ডেস্কভিত্তিক ব্যবস্থা।</p></article>
+          <article class="card"><div class="icon-box">✓</div><h3>মাসে ২টি পরীক্ষা</h3><p>নিয়মিত পরীক্ষা দিয়ে প্রস্তুতি ও অগ্রগতি যাচাইয়ের সুযোগ।</p></article>
+          <article class="card"><div class="icon-box">★</div><h3>মেধাবীদের স্বীকৃতি</h3><p>পরীক্ষায় ভালো ফল করা শিক্ষার্থীদের পুরস্কার ও উৎসাহ প্রদান।</p></article>
+          <article class="card"><div class="icon-box">◉</div><h3>CCTV</h3><p>প্রতিষ্ঠানের পরিবেশ পর্যবেক্ষণে সিসিটিভি ব্যবস্থা।</p></article>
+          <article class="card"><div class="icon-box">⚡</div><h3>IPS সুবিধা</h3><p>বিদ্যুৎ বিভ্রাটের সময় পড়ার পরিবেশ সচল রাখতে IPS সুবিধা।</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="shifts">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">শিক্ষার্থীদের জন্য</span>
+          <h2>শিক্ষার্থী শিফট ও মাসিক ফি</h2>
+          <p>তৃতীয় শ্রেণি থেকে এইচএসসি পর্যন্ত শিক্ষার্থীদের জন্য আলাদা সময়সূচি। ভর্তি নেওয়ার আগে আসন ও শিফট নিশ্চিত করুন।</p>
+        </div>
+        <div class="grid-3">
+          <article class="card shift-card">
+            <span class="status status-soon">শিগগির চালু হবে</span>
+            <h3>সকাল শিফট</h3>
+            <p>সকাল ৬:০০টা – ৯:০০টা</p>
+            <div class="fee">ভর্তি ফি: ৳১,০০০<br>মাসিক ফি: <strong>৳২,৫০০</strong></div>
+            <p class="small-note">চালুর তারিখ পরে ঘোষণা করা হবে।</p>
+          </article>
+          <article class="card shift-card">
+            <span class="status status-soon">শিগগির চালু হবে</span>
+            <h3>দিবা শিফট</h3>
+            <p>দুপুর ২:০০টা – বিকেল ৫:০০টা</p>
+            <div class="fee">ভর্তি ফি: ৳১,০০০<br>মাসিক ফি: <strong>৳২,৫০০</strong></div>
+            <p class="small-note">চালুর তারিখ পরে ঘোষণা করা হবে।</p>
+          </article>
+          <article class="card shift-card active">
+            <span class="status status-active">বর্তমানে চালু</span>
+            <h3>সন্ধ্যা শিফট</h3>
+            <p>সন্ধ্যা ৬:৩০টা – রাত ৯:৩০টা</p>
+            <div class="fee">ভর্তি ফি: ৳১,০০০<br>মাসিক ফি: <strong>৳২,৫০০</strong></div>
+            <p class="small-note">ভর্তির আগে আসন খালি আছে কি না ফোন করে জেনে নিন।</p>
+          </article>
+        </div>
+        <p class="small-note" style="text-align:center;margin-top:18px;">আবাসিক সেবা ভবিষ্যতে চালুর পরিকল্পনা রয়েছে; বর্তমানে চালু সেবা হিসেবে গণ্য করবেন না।</p>
+      </div>
+    </section>
+
+    <section class="soft" id="job-prep">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">চাকরিপ্রার্থীদের জন্য</span>
+          <h2>সম্পূর্ণ আলাদা শিফটে পড়ার ব্যবস্থা</h2>
+          <p>চাকরির প্রস্তুতি নেওয়া প্রার্থীদের জন্য শিক্ষার্থী শিফট থেকে আলাদা সময় ও ফি নির্ধারিত।</p>
+        </div>
+        <div class="grid-2">
+          <article class="card shift-card active">
+            <span class="status status-active">বর্তমানে চালু</span>
+            <h3>দিবা চাকরি প্রস্তুতি শিফট</h3>
+            <p>সকাল ৯:০০টা – দুপুর ২:০০টা</p>
+            <div class="fee">ভর্তি ফি: ৳৩০০<br>মাসিক ফি: <strong>৳৬০০</strong></div>
+          </article>
+          <article class="card shift-card active">
+            <span class="status status-active">বর্তমানে চালু</span>
+            <h3>সন্ধ্যা চাকরি প্রস্তুতি শিফট</h3>
+            <p>সন্ধ্যা ৬:০০টা – রাত ১০:০০টা</p>
+            <div class="fee">ভর্তি ফি: ৳৩০০<br>মাসিক ফি: <strong>৳১,০০০</strong></div>
+          </article>
+        </div>
+        <p class="small-note" style="text-align:center;margin-top:16px;">চাকরিপ্রার্থীদের শিফট ও শিক্ষার্থীদের শিফট পৃথক। চাকরি প্রস্তুতি শিফটে ভর্তি ও আসন সম্পর্কে জানতে যোগাযোগ করুন।</p>
+      </div>
+    </section>
+
+    <section id="teachers">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">পরিচালনা ও একাডেমিক সহায়তা</span>
+          <h2>আমাদের শিক্ষকবৃন্দ</h2>
+          <p>প্রতিষ্ঠানের পরিচালনা ও একাডেমিক কার্যক্রমে যুক্ত ব্যক্তিদের পরিচিতি।</p>
+        </div>
+        <div class="grid-3">
+          <article class="card teacher-card">
+            <!-- ছবি যোগ করুন: <img src="images/mezbaul-islam.jpg" alt="মোঃ মেজবাউল ইসলাম" style="width:112px;height:112px;object-fit:cover;border-radius:50%;margin:0 auto 16px"> -->
+            <div class="avatar-placeholder">মে</div>
+            <h3>মোঃ মেজবাউল ইসলাম</h3>
+            <div class="role">প্রতিষ্ঠাতা ও নির্বাহী পরিচালক</div>
+            <p>বিএসসি (অনার্স), এমএসসি (গণিত)। সাবেক সহকারী শিক্ষক (গণিত), জয়পুরহাট সদর থানা উচ্চ বিদ্যালয়, জয়পুরহাট।</p>
+            <p class="small-note">গণিত একাডেমি ও রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টারের প্রতিষ্ঠাতা/পরিচালক।</p>
+          </article>
+          <article class="card teacher-card">
+            <!-- ছবি যোগ করুন: <img src="images/sajedur-rahman.jpg" alt="মোঃ সাজেদুর রহমান" style="width:112px;height:112px;object-fit:cover;border-radius:50%;margin:0 auto 16px"> -->
+            <div class="avatar-placeholder">সা</div>
+            <h3>মোঃ সাজেদুর রহমান</h3>
+            <div class="role">একাডেমিক ফ্যাসিলিটেটর — গণিত</div>
+            <p>গণিত বিষয়ে একাডেমিক সহায়তা ও দিকনির্দেশনার দায়িত্বে।</p>
+          </article>
+          <article class="card teacher-card">
+            <!-- ছবি যোগ করুন: <img src="images/jannat.jpg" alt="মোছা. জান্নাত" style="width:112px;height:112px;object-fit:cover;border-radius:50%;margin:0 auto 16px"> -->
+            <div class="avatar-placeholder">জা</div>
+            <h3>মোছা. জান্নাত</h3>
+            <div class="role">একাডেমিক ফ্যাসিলিটেটর — ইংরেজি</div>
+            <p>ইংরেজি বিষয়ে একাডেমিক সহায়তা ও দিকনির্দেশনার দায়িত্বে।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="process">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">ভর্তি ও কার্যপ্রণালি</span>
+          <h2>কীভাবে ভর্তি হবেন?</h2>
+          <p>ভর্তি নিশ্চিত করার আগে শিফট, আসন ও নিয়মাবলি সম্পর্কে সরাসরি জেনে নিন।</p>
+        </div>
+        <div class="grid-2">
+          <div class="card steps">
+            <div class="step"><div><strong>ফোনে যোগাযোগ করুন</strong><span>আপনার শ্রেণি বা চাকরি প্রস্তুতির শিফট সম্পর্কে জানান।</span></div></div>
+            <div class="step"><div><strong>শিফট ও আসন নিশ্চিত করুন</strong><span>বর্তমানে চালু শিফটে আসন খালি আছে কি না জেনে নিন।</span></div></div>
+            <div class="step"><div><strong>ফি ও নিয়ম জেনে নিন</strong><span>ভর্তি ফি, মাসিক ফি ও প্রতিষ্ঠানের নিয়মাবলি নিশ্চিত করুন।</span></div></div>
+            <div class="step"><div><strong>ভর্তি সম্পন্ন করুন</strong><span>কর্তৃপক্ষের নির্দেশনা অনুযায়ী ভর্তি সম্পন্ন করুন।</span></div></div>
+          </div>
+          <div class="card">
+            <h3>প্রস্তাবিত নিয়মাবলি</h3>
+            <ul class="check-list">
+              <li>নির্ধারিত শিফটের সময় মেনে চলতে হবে।</li>
+              <li>নিজ নিজ প্রতিষ্ঠানের পড়া ও প্রয়োজনীয় বই-খাতা সঙ্গে আনতে হবে।</li>
+              <li>নীরবতা, পরিচ্ছন্নতা ও অন্যের পড়াশোনার প্রতি সম্মান বজায় রাখতে হবে।</li>
+              <li>ফি, ছুটি, অনুপস্থিতি ও অন্যান্য নিয়ম ভর্তি সময় কর্তৃপক্ষের কাছ থেকে নিশ্চিত করতে হবে।</li>
+            </ul>
+            <p class="small-note" style="margin-top:12px;">নোট: এই নিয়মাবলি ওয়েবসাইটের জন্য প্রস্তাবিত খসড়া। প্রকাশের আগে প্রতিষ্ঠানের অনুমোদিত নিয়ম অনুযায়ী সম্পাদনা করুন।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">পরীক্ষা ও অগ্রগতি</span>
+          <h2>মাসিক পরীক্ষা ও ফলাফল</h2>
+          <p>প্রতি মাসে ২টি পরীক্ষা নেওয়ার পরিকল্পনা অনুযায়ী পরীক্ষার নোটিশ, ফলাফল ও পুরস্কার বিতরণের তথ্য এখানে প্রকাশ করা যাবে।</p>
+        </div>
+        <div class="grid-3">
+          <!-- নতুন ফলাফল প্রকাশ করতে এই কার্ডটি কপি করে পরীক্ষার তথ্য, তারিখ ও শিক্ষার্থীর তথ্য পরিবর্তন করুন। -->
+          <article class="card result-card">
+            <span class="result-rank">পরীক্ষার নোটিশ</span>
+            <h3>পরবর্তী পরীক্ষার সময়সূচি</h3>
+            <p>পরীক্ষার তারিখ, বিষয় ও সময়সূচি এখানে লিখুন।</p>
+            <p class="result-meta">তারিখ: পরে যুক্ত করুন</p>
+          </article>
+          <article class="card result-card">
+            <span class="result-rank">ফলাফল</span>
+            <h3>মাসিক পরীক্ষার ফলাফল</h3>
+            <p>পরীক্ষার নাম, তারিখ, শিক্ষার্থীর নাম, শ্রেণি ও প্রতিষ্ঠানের নাম এখানে যুক্ত করুন।</p>
+            <p class="result-meta">ফলাফল প্রকাশের তারিখ: পরে যুক্ত করুন</p>
+          </article>
+          <article class="card result-card">
+            <span class="result-rank">পুরস্কার</span>
+            <h3>মেধাবী শিক্ষার্থীদের স্বীকৃতি</h3>
+            <p>প্রথম ও দ্বিতীয় স্থান অধিকারীসহ পুরস্কারপ্রাপ্ত শিক্ষার্থীদের তথ্য ও ছবি এখানে যোগ করুন।</p>
+            <p class="result-meta">ছবি যোগ করতে images ফোল্ডার ব্যবহার করুন।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">ছবি ও ভিডিও</span>
+          <h2>আমাদের কার্যক্রমের গ্যালারি</h2>
+          <p>এখানে প্রতিষ্ঠানের আসল ছবি, পড়ার পরিবেশ, পরীক্ষা, পুরস্কার বিতরণ ও শিক্ষার্থীদের অভিজ্ঞতার ভিডিও যোগ করুন।</p>
+        </div>
+        <div class="media-grid">
+          <!-- ছবি যোগের উদাহরণ:
+          <article class="media-item">
+            <div class="media-frame"><img src="images/room-interior.jpg" alt="রিডিং রুমের ভেতরের পরিবেশ" loading="lazy"></div>
+            <div class="media-caption"><strong>রিডিং রুমের পরিবেশ</strong><span>প্রতিষ্ঠানের ভেতরের ছবি</span></div>
+          </article>
+          -->
+          <article class="media-item"><div class="media-frame">এখানে পড়ার পরিবেশের ছবি যোগ করুন<br><small>images/room-interior.jpg</small></div><div class="media-caption"><strong>পড়ার পরিবেশ</strong><span>ছবি পরে যুক্ত করুন</span></div></article>
+          <article class="media-item"><div class="media-frame">এখানে পরীক্ষার ছবি যোগ করুন<br><small>images/monthly-exam.jpg</small></div><div class="media-caption"><strong>মাসিক পরীক্ষা</strong><span>ছবি পরে যুক্ত করুন</span></div></article>
+          <article class="media-item"><div class="media-frame">এখানে পুরস্কার বিতরণের ছবি যোগ করুন<br><small>images/award-ceremony.jpg</small></div><div class="media-caption"><strong>পুরস্কার বিতরণ</strong><span>ছবি পরে যুক্ত করুন</span></div></article>
+        </div>
+
+        <div style="margin-top:34px">
+          <h3 style="color:var(--navy);text-align:center;margin-bottom:18px">ভিডিও গ্যালারি</h3>
+          <div class="grid-2">
+            <!-- YouTube ভিডিও যোগের নমুনা:
+            <article class="media-item">
+              <div class="media-frame" style="padding:0">
+                <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="প্রতিষ্ঠানের পরিচিতি" loading="lazy" allowfullscreen></iframe>
+              </div>
+              <div class="media-caption"><strong>প্রতিষ্ঠানের পরিচিতি</strong><span>ভিডিওর সংক্ষিপ্ত বর্ণনা</span></div>
+            </article>
+            -->
+            <article class="media-item"><div class="media-frame">YouTube ভিডিও যোগের স্থান<br><small>ভিডিও ID বসাতে হবে</small></div><div class="media-caption"><strong>প্রতিষ্ঠানের পরিচিতি</strong><span>পরবর্তীতে YouTube ভিডিও যুক্ত করুন</span></div></article>
+            <article class="media-item"><div class="media-frame">YouTube ভিডিও যোগের স্থান<br><small>ভিডিও ID বসাতে হবে</small></div><div class="media-caption"><strong>শিক্ষার্থীদের অভিজ্ঞতা</strong><span>পরবর্তীতে শিক্ষার্থীর অভিজ্ঞতার ভিডিও যুক্ত করুন</span></div></article>
+          </div>
+        </div>
+        <p class="small-note" style="text-align:center;margin-top:18px">শিক্ষার্থীদের ছবি, ভিডিও বা ফলাফল প্রকাশের আগে প্রয়োজনীয় অনুমতি নিশ্চিত করুন।</p>
+      </div>
+    </section>
+
+    <section id="admission">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>ভর্তি ও আসন সম্পর্কে জানতে যোগাযোগ করুন</h2>
+            <p>শিক্ষার্থী শিফট ও চাকরি প্রস্তুতির শিফটের তথ্য আলাদাভাবে জেনে নিন।</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn btn-light" href="tel:+8801773260187">ফোন করুন</a>
+            <a class="btn btn-outline" href="https://wa.me/8801773260187" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">যোগাযোগ</span>
+          <h2>আমাদের ঠিকানা ও যোগাযোগের তথ্য</h2>
+          <p>ভর্তি, শিফট, ফি ও আসনসংক্রান্ত তথ্য জানতে সরাসরি যোগাযোগ করুন।</p>
+        </div>
+        <div class="contact-grid">
+          <div class="card">
+            <div class="contact-line"><span class="icon-box">⌖</span><div><b>ঠিকানা</b><span>থ্রি স্টার মোড়, হাজী মাদ্রাসা রোড, জয়পুরহাট সদর, জয়পুরহাট।</span></div></div>
+            <div class="contact-line"><span class="icon-box">☎</span><div><b>মোবাইল</b><span><a href="tel:+8801773260187">০১৭৭৩-২৬০১৮৭</a></span></div></div>
+            <div class="contact-line"><span class="icon-box">◷</span><div><b>সময়সূচি</b><span>শিফট অনুযায়ী কার্যক্রম পরিচালিত হয়। আসন ও সময় নিশ্চিত করতে ফোন করুন।</span></div></div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+              <a class="btn btn-primary" href="tel:+8801773260187">এখনই ফোন করুন</a>
+              <a class="btn btn-light" href="https://wa.me/8801773260187" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+          <div class="map-placeholder">
+            <div><strong style="display:block;color:var(--navy);font-size:1.2rem">Google Maps যোগ করার স্থান</strong><span>পরবর্তীতে Google Maps থেকে প্রতিষ্ঠানের সঠিক অবস্থানের Embed code এখানে বসান।<br>ঠিকানা: থ্রি স্টার মোড়, হাজী মাদ্রাসা রোড, জয়পুরহাট</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টার</h3>
+          <p>শিক্ষকের তত্ত্বাবধানে নিজ প্রতিষ্ঠানের সিলেবাস অনুযায়ী পড়াশোনার একটি আধুনিক ও সুশৃঙ্খল পরিবেশ।</p>
+          <p><strong>মেজবা স্যার পরিচালিত</strong></p>
+        </div>
+        <div>
+          <h4>দ্রুত লিংক</h4>
+          <div class="footer-links">
+            <a href="#about">প্রতিষ্ঠানের পরিচিতি</a>
+            <a href="#shifts">শিক্ষার্থী শিফট ও ফি</a>
+            <a href="#job-prep">চাকরি প্রস্তুতি</a>
+            <a href="#results">পরীক্ষা ও ফলাফল</a>
+            <a href="#gallery">ছবি ও ভিডিও</a>
+          </div>
+        </div>
+        <div>
+          <h4>যোগাযোগ</h4>
+          <p>থ্রি স্টার মোড়, হাজী মাদ্রাসা রোড, জয়পুরহাট সদর, জয়পুরহাট।</p>
+          <p><a href="tel:+8801773260187">০১৭৭৩-২৬০১৮৭</a></p>
+          <p><a href="https://wa.me/8801773260187" target="_blank" rel="noopener">WhatsApp-এ যোগাযোগ</a></p>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>© <span id="currentYear"></span> রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টার, জয়পুরহাট</span>
+        <span>সকল অধিকার সংরক্ষিত</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-contact" href="tel:+8801773260187" aria-label="ফোন করে যোগাযোগ করুন">☎ ফোন করুন</a>
+
+  <script>
+    // মোবাইল মেনু খোলা/বন্ধ
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
