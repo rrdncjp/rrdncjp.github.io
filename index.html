@@ -31,13 +31,33 @@
 
 </style>
 </head>
-<!-- চলমান ভর্তি ব্যানার -->
-<div class="admission-marquee">
-  <img
-    src="https://raw.githubusercontent.com/rrdncjp/rrdncjp.github.io/main/admission-banner.png"
-    alt="রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টার—ভর্তি চলছে"
-  >
-</div>
+/* ছোট ও মাঝখানে চলমান ভর্তি ব্যানার */
+.admission-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.admission-marquee img {
+  display: block;
+  width: 180px;
+  max-width: 65vw;
+  height: auto;
+  border-radius: 8px;
+  animation: admission-scroll 10s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes admission-scroll {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 <body>
 <div class="topline"><div class="container"><span>📍 থ্রি স্টার মোড়, হাজী মাদ্রাসা রোড, জয়পুরহাট</span><span>☎ ০১৭৭৩-২৬০১৮৭</span></div></div>
 <header class="header"><div class="container nav">
