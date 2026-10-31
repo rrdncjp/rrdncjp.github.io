@@ -429,8 +429,7 @@ function generalRows(d){return [['আবেদন ধরন',d.applicationType],
 const endpointConfigured=()=>RESIDENTIAL_SHEETS_ENDPOINT.startsWith('https://script.google.com/macros/s/');
 async function sendToSheet(data,statusEl){if(!endpointConfigured()){statusEl.textContent='PDF তৈরি করা যাবে। সব আবেদন Excel/Google Sheets-এ জমা চালু করতে Apps Script Web App URL বসিয়ে সেটআপ সম্পন্ন করুন।';return false;}statusEl.textContent='আবেদন স্প্রেডশিটে পাঠানোর অনুরোধ করা হচ্ছে…';await fetch(RESIDENTIAL_SHEETS_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});statusEl.textContent='আবেদন পাঠানোর অনুরোধ সম্পন্ন হয়েছে। Google Sheet-এ নতুন সারি এসেছে কি না যাচাই করুন।';return true;}
 document.getElementById('admissionForm').addEventListener('submit',async function(e){e.preventDefault();if(!this.reportValidity())return;const d=generalData(),status=document.getElementById('formAlert'),btn=this.querySelector('button[type="submit"]');btn.disabled=true;try{await sendToSheet(d,status);status.textContent='আপনার আবেদন জমা দেওয়ার অনুরোধ পাঠানো হয়েছে। আবেদন নম্বর ও তথ্য Google Sheet-এ এসেছে কি না কর্তৃপক্ষ যাচাই করবেন।';this.reset();}catch(err){status.textContent='আবেদন পাঠানো যায়নি। অনুগ্রহ করে ইন্টারনেট সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।';}finally{btn.disabled=false;}});
-</script></script>
-
+</script>
 <a href="https://script.google.com/macros/s/AKfycby89kf538oM3VqziXreYL_JteY1giEt11HTTo-qlb_f3jlHbLB9aGFgOFVW6YTXhmqe/exec?page=admin"
 target="_blank"
 rel="noopener noreferrer"
