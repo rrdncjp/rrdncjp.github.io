@@ -420,7 +420,26 @@ function openApplicationPdf(title, type, rows, pledgeText='') {
  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const w=window.open('','_blank');
  if(!w){alert('পপ-আপ ব্লক হয়েছে। ব্রাউজারে পপ-আপ অনুমতি দিয়ে আবার চেষ্টা করুন।');return;}
- w.document.write(`<!doctype html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${esc(title)}</title><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet"><style>body{font-family:'Hind Siliguri',sans-serif;color:#172033;margin:22px auto;max-width:850px;padding:20px}header{text-align:center;border-bottom:3px solid #0f766e;padding-bottom:14px}h1{font-size:23px;margin:0;color:#0f766e}table{width:100%;border-collapse:collapse;margin:20px 0}td{border:1px solid #cbd5e1;padding:9px;vertical-align:top}td:first-child{width:36%;font-weight:bold;background:#f1f5f9}.tag{display:inline-block;background:#dcfce7;color:#166534;padding:5px 12px;border-radius:30px;font-weight:bold}.pledge{border:1px solid #94a3b8;padding:14px;border-radius:8px}.actions{text-align:center;margin:20px}.actions button{padding:10px 18px;border:0;border-radius:8px;background:#0f766e;color:white;font-size:16px}@media print{.actions{display:none}body{margin:0 auto;padding:0}tr{break-inside:avoid}}</style></head><body><header><h1>রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টার, জয়পুরহাট</h1><p>${esc(title)}</p><span class="tag">${esc(type)}</span><p>আবেদন তৈরির সময়: ${esc(new Date().toLocaleString('bn-BD'))}</p></header><table><tbody>${rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1]||'উল্লেখ করা হয়নি')}</td></tr>`).join('')}</tbody></table>${pledgeText?`<div class="pledge"><strong>অঙ্গীকারনামা</strong><p>${esc(pledgeText)}</p></div>`:''}<p>ফরম জমা দেওয়া মানেই ভর্তি নিশ্চিত হওয়া নয়। কর্তৃপক্ষের সঙ্গে যোগাযোগ করে ভর্তি নিশ্চিত করুন।</p><div class="actions"><button onclick="window.print()">PDF হিসেবে সংরক্ষণ / প্রিন্ট</button></div><script>window.onload=()=>setTimeout(()=>window.print(),500)<\/script></body></html>`);
+ w.document.write(`<!doctype html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${esc(title)}</title><link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet"><style>body{font-family:'Hind Siliguri',sans-serif;color:#172033;margin:22px auto;max-width:850px;padding:20px}header{text-align:center;border-bottom:3px solid #0f766e;padding-bottom:14px}h1{font-size:23px;margin:0;color:#0f766e}table{width:100%;border-collapse:collapse;margin:20px 0}td{border:1px solid #cbd5e1;padding:9px;vertical-align:top}td:first-child{width:36%;font-weight:bold;background:#f1f5f9}.tag{display:inline-block;background:#dcfce7;color:#166534;padding:5px 12px;border-radius:30px;font-weight:bold}.pledge{border:1px solid #94a3b8;padding:14px;border-radius:8px}.actions{text-align:center;margin:20px}.actions button{padding:10px 18px;border:0;border-radius:8px;background:#0f766e;color:white;font-size:16px}@media print{.actions{display:none}body{margin:0 auto;padding:0}tr{break-inside:avoid}}</style></head><body><header><h1>রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টার, জয়পুরহাট</h1><p>${esc(title)}</p><span class="tag">${esc(type)}</span><p>আবেদন তৈরির সময়: ${esc(new Date().toLocaleString('bn-BD'))}</p></header><table><tbody>${rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1]||'উল্লেখ করা হয়নি')}</td></tr>`).join('')}</tbody></table>${pledgeText?`<div class="pledge"><strong>অঙ্গীকারনামা</strong><p>${esc(pledgeText)}</p></div>`:''}<p>ফরম জমা দেওয়া মানেই ভর্তি নিশ্চিত হওয়া নয়। কর্তৃপক্ষের সঙ্গে যোগাযোগ করে ভর্তি নিশ্চিত করুন।</p><div class="actions"><button onclick="window.print()">PDF হিসেবে সংরক্ষণ / প্রিন্ট</button></div><script>window.onload=()=>setTimeout(()=>window.print(),500)<\/script><!-- Reading Room Admin Login Button -->
+<a href="https://script.google.com/macros/s/AKfycby89kf538oM3VqziXreYL_JteY1giEt11HTTo-qlb_f3jlHbLB9aGFgOFVW6YTXhmqe/exec?page=admin"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="
+   position: fixed;
+   bottom: 18px;
+   right: 18px;
+   z-index: 99999;
+   background: #34206f;
+   color: #ffffff;
+   padding: 11px 18px;
+   border-radius: 30px;
+   text-decoration: none;
+   font-size: 14px;
+   font-weight: bold;
+   box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+   ">
+   🔐 Admin Login
+</a></body></html>`);
  w.document.close();
 }
 function generalData(){const f=document.getElementById('admissionForm'),d={};new FormData(f).forEach((v,k)=>d[k]=String(v).trim());d.applicationType='সাধারণ ভর্তি / চাকরিপ্রার্থী';d.submittedAt=new Date().toLocaleString('bn-BD');return d;}
