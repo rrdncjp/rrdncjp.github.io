@@ -431,7 +431,7 @@ async function sendToSheet(data,statusEl){if(!endpointConfigured()){statusEl.tex
 document.getElementById('admissionForm').addEventListener('submit',async function(e){e.preventDefault();if(!this.reportValidity())return;const d=generalData(),status=document.getElementById('formAlert'),btn=this.querySelector('button[type="submit"]');btn.disabled=true;try{await sendToSheet(d,status);status.textContent='আপনার আবেদন জমা দেওয়ার অনুরোধ পাঠানো হয়েছে। আবেদন নম্বর ও তথ্য Google Sheet-এ এসেছে কি না কর্তৃপক্ষ যাচাই করবেন।';this.reset();}catch(err){status.textContent='আবেদন পাঠানো যায়নি। অনুগ্রহ করে ইন্টারনেট সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।';}finally{btn.disabled=false;}});
 </script>
 <a href="https://script.google.com/macros/s/AKfycby89kf538oM3VqziXreYL_JteY1giEt11HTTo-qlb_f3jlHbLB9aGFgOFVW6YTXhmqe/exec?page=admin"
-target="_blank"
+target="_self"
 rel="noopener noreferrer"
 style="position:fixed;top:18px;right:18px;z-index:99999;background:#34206f;color:white;padding:11px 18px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:bold;box-shadow:0 4px 14px rgba(0,0,0,0.25);">
 🔐 Admin Login
