@@ -416,7 +416,10 @@
     referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
   <p class="tiny" style="margin-bottom:0">মানচিত্রে অবস্থান দেখতে বা সরাসরি Google Maps খুলতে উপরের বাটনে চাপ দিন।</p>
 </div></div></div></section>
-</main><footer><div class="container"><div><div class="footer-title">রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টার, জয়পুরহাট</div><div class="tiny">মেজবা স্যার</div></div><div class="tiny">© <span id="year"></span> · সর্বস্বত্ব সংরক্ষিত</div></div></footer>
+</main><footer><div class="container"><div><div class="footer-title">রিডিং রুম এন্ড ডে-নাইট কেয়ার সেন্টার, জয়পুরহাট</div><div class="tiny">মেজবা স্যার</div></div><div class="tiny">© <span id="year"></span> · সর্বস্বত্ব সংরক্ষিত</div></div><div class="visitor-counter">
+  <span>সর্বমোট ভিজিট: <strong id="total-visits">লোড হচ্ছে...</strong></span>
+  <span>আজকের ভিজিট: <strong id="today-visits">লোড হচ্ছে...</strong></span>
+</div></footer>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 document.querySelectorAll('.shift-apply').forEach(link=>link.addEventListener('click',()=>{const s=document.getElementById('shift');if(s)s.value=link.dataset.shift;}));
